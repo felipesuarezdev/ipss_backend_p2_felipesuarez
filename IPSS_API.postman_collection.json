@@ -1,0 +1,245 @@
+{
+	"info": {
+		"_postman_id": "cf3743c3-15fe-4d67-9ecc-481fbf53ced6",
+		"name": "IPSS_API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16229090"
+	},
+	"item": [
+		{
+			"name": "crear_persona",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"Jane\",\n  \"lastName\": \"Doe\",\n  \"nationality\": \"Canadian\",\n  \"year\": 1985,\n  \"works\": [\n    {\n      \"company\": \"Tech Co\",\n      \"position\": \"Senior Developer\",\n      \"initContract\": \"2018-01-01\",\n      \"finishContract\": \"2021-12-31\"\n    },\n    {\n      \"company\": \"Startup Inc\",\n      \"position\": \"CTO\",\n      \"initContract\": \"2022-01-01\",\n      \"finishContract\": \"2023-12-31\"\n    }\n  ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/persons",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"persons"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "obtener_todos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/persons",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"persons"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "obtener_porid",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/persons/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"persons",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "actualizar_persona",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 1,\n    \"name\": \"Felipe Andrés\",\n    \"lastName\": \"Suárez Vargas\",\n    \"nationality\": \"Chilena\",\n    \"year\": 1995,\n    \"createdAt\": \"2024-09-09T17:31:19.532Z\",\n    \"updatedAt\": \"2024-09-09T17:31:19.532Z\",\n    \"Works\": [\n        {\n            \"id\": 1,\n            \"company\": \"Armada de Chile\",\n            \"initContract\": \"2020-01-01T03:00:00.000Z\",\n            \"finishContract\": \"2023-12-31T03:00:00.000Z\",\n            \"position\": \"Ingeniero TI\",\n            \"createdAt\": \"2024-09-09T17:31:19.537Z\",\n            \"updatedAt\": \"2024-09-09T17:31:19.537Z\",\n            \"PersonId\": 1\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/persons/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"persons",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete_persona",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/persons/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"persons",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "obtener_todostrabajos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/persons/1/works",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"persons",
+						"1",
+						"works"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "agregar_trabajo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"company\": \"Gendarmeria\",\n  \"initContract\": \"01-01-2024\",\n  \"finishContract\": \"12-12-2024\",\n  \"position\": \"tecnico\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/persons/1/works",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"persons",
+						"1",
+						"works"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "modificar_trabajo",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"company\": \"Fintesk\",\n  \"initContract\": \"01-01-2024\",\n  \"finishContract\": \"12-12-2024\",\n  \"position\": \"React developer\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/persons/1/works/6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"persons",
+						"1",
+						"works",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "eliminar_trabajo",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/persons/1/works/7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"persons",
+						"1",
+						"works",
+						"7"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
